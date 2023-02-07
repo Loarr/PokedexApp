@@ -784,7 +784,7 @@
     "name": "Rattata",
     "percentage_male": 50,
     "type1": "normal",
-    "type2": "dark",
+    "type2": "",
     "generation": 1,
     "is_legendary": 0,
     "stats":   {
@@ -829,7 +829,7 @@
     "name": "Raticate",
     "percentage_male": 50,
     "type1": "normal",
-    "type2": "dark",
+    "type2": "",
     "generation": 1,
     "is_legendary": 0,
     "stats":  {

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="flex flex-col space-y-4">
         <Pokemon :pokemon="pokemon" v-for="(pokemon, index) in pokemons" :key='index'/>
     </div>
 </template>
