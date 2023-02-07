@@ -1,14 +1,14 @@
 <template>
     <RouterLink :to="`/pokemons/${pokemon.name}`">
-        <div class="flex flex-col items-center space-y-6 w-20 h-96 p-2 border border-gray-200 cursor-pointer rounded-md">
-            <img :src="'/types/'+type1+'.png'" alt="" class="w-14 h-14"/>
-            <img :src="'/types/'+type2+'.png'" alt="" class="h-14"/>
-            <br/>
-            <div class="rotate-90">
+        <div class="flex flex-col items-center w-20 h-96 p-2 border bg-yellow-800 border-gray-200 cursor-pointer rounded-md">
+            <img :src="'/types/'+type1+'.png'" alt="" class="w-14 h-14 mb-4"/>
+            <img :src="'/types/'+type2+'.png'" alt="" class="h-14 mb-4"/>
+            <div class="rotate-90 h-10 text-center my-8">
                 <span class="font-semibold">{{ pkmName }}</span>
             </div>
-            <br/>
-            <span>{{ pokemonDetails.id < 10 ? '00'+pokemonDetails.id : '0'+pokemonDetails.id }}</span>
+            <div class="border-t-2 border-black font-semibold text-center mt-8 w-14">
+                <span>{{ pokemonDetails.id < 10 ? '00'+pokemonDetails.id : '0'+pokemonDetails.id }}</span>
+            </div>
             <div>
                 <img :src="sprite"/>
             </div>

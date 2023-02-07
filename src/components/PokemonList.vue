@@ -1,5 +1,5 @@
 <template>
-    <div class="flex w-max space-x-4 overflow-scroll">
+    <div class="flex w-100% space-x-4 overflow-scroll">
         <Pokemon :pokemon="pokemon" v-for="(pokemon, index) in pokemons" :key='index'/>
     </div>
 </template>
@@ -14,7 +14,7 @@ const pokemons = ref()
 
 //mount and then make api call
 onMounted(()=>{
-    axios.get('https://pokeapi.co/api/v2/pokemon?limit=151').then(data =>{
+    axios.get('https://pokeapi.co/api/v2/pokemon?limit=1008').then(data =>{
         pokemons.value = data.data.results
         console.log(pokemons.value)
     })
