@@ -5,7 +5,7 @@
             <img :src="'/types/'+type2+'.png'" alt="" class="h-14"/>
             <br/>
             <div class="rotate-90">
-                <span class="font-semibold">{{ pokemon.name }}</span>
+                <span class="font-semibold">{{ pkmName }}</span>
             </div>
             <br/>
             <span>{{ pokemonDetails.id < 10 ? '00'+pokemonDetails.id : '0'+pokemonDetails.id }}</span>
@@ -29,6 +29,8 @@ const pokemonDetails = ref({})
 const type1 = ref("")
 const type2 = ref("")
 const sprite = ref("")
+const pkmName = prop.pokemon.name[0].toUpperCase()+prop.pokemon.name.slice(1)
+console.log(pkmName)
 
 onMounted(()=>{
     axios.get(url).then(data =>{

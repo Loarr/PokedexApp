@@ -8,9 +8,15 @@
 
 defineProps({
     pkmType:{
-        type: Object
+        type: String
     }
 })
+
+function capitalizedFirst(string){
+    const capital = string[0].toUpperCase()
+    const rest = string.slice(1)
+    return captal + rest
+}
 
 </script>
 
