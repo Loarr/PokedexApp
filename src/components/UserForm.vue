@@ -1,5 +1,5 @@
 <template>
-    <form class="flex flex-col mt-10 space-y-7" @submit.prevent="submitForm">
+    <form class="flex w-96 m-auto flex-col mt-10 space-y-7" @submit.prevent="submitForm">
         <div class="form-group" v-if="formType == 'signup'">
             <label class="label" for="fullname">Full name</label>
             <input class="input" type="text" name="fullname" v-model="user.fullname" id=""/>

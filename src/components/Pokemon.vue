@@ -1,25 +1,46 @@
 <template>
     <RouterLink :to="`/pokemons/${pokemon.name}`">
-        <div class="flex items-center space-x-6 w-full p-2 border border-gray-200 cursor-pointer rounded-md">
-            <img :src="'public/types/'+pokemon.type1+'.png'" alt="?" class="w-14"/>
-            <img :src="'public/types/'+pokemon.type2+'.png'" alt="" class="w-14"/>
-            <span>{{ pokemon.name }}</span>
+        <div class="flex flex-col items-center space-y-6 w-20 h-96 p-2 border border-gray-200 cursor-pointer rounded-md">
+            <img :src="'/types/'+type1+'.png'" alt="" class="w-14 h-14"/>
+            <img :src="'/types/'+type2+'.png'" alt="" class="h-14"/>
+            <br/>
+            <div class="rotate-90">
+                <span class="font-semibold">{{ pokemon.name }}</span>
+            </div>
+            <br/>
+            <span>{{ pokemonDetails.id < 10 ? '00'+pokemonDetails.id : '0'+pokemonDetails.id }}</span>
+            <div>
+                <img :src="sprite"/>
+            </div>
         </div>
-        <TypeBar/>
+
     </RouterLink>
 </template>
 
 <script setup>
 import { RouterLink } from "vue-router";
+import axios from 'axios';
+import { onMounted, ref } from 'vue';
 
-defineProps({
-    pokemon:{
-        type: Object,
+const prop = defineProps(['pokemon'])
 
-    }
+const url = prop.pokemon.url
+const pokemonDetails = ref({})
+const type1 = ref("")
+const type2 = ref("")
+const sprite = ref("")
+
+onMounted(()=>{
+    axios.get(url).then(data =>{
+        pokemonDetails.value= data.data
+        type1.value = (pokemonDetails._rawValue.types[0].type.name)
+        if(pokemonDetails._rawValue.types[1] !== undefined){
+            type2.value = (pokemonDetails._rawValue.types[1].type.name)
+        }
+        sprite.value = pokemonDetails._rawValue.sprites.front_default
+    })
 })
 
-const types = ["normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "ghost", "dragon", "dark", "steel", "fairy"]
 
 </script>
 

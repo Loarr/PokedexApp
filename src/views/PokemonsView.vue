@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="h-full max-w-screem overflow-x-scroll">
         <!-- Pokemons list page -->
         <PokemonList />
     </div>

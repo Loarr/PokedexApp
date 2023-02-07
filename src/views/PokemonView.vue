@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col space-y-6">
         <h1 class="text-6xl text-gray-900 font-semibold">{{ pokemonDetails?.name }}</h1>
-        <img :src="image" :alt="pokemonDetails?.name" class="w-full h-full rounded-lg" />
+        <img :src="image" :alt="pokemonDetails?.name" class="w-64 h-64 rounded-lg" />
         <div class="space-y-4">
             <div class="flex items-center space-x-4">
                 <span>Primary Type:</span><TypeBar :pkmType="pokemonDetails?.type1"/>
