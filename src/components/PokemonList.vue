@@ -12,11 +12,12 @@ import { onMounted, ref } from 'vue';
 
 const pokemons = ref()
 
+const limit = defineProps(['limit'])
+
 //mount and then make api call
 onMounted(()=>{
-    axios.get('https://pokeapi.co/api/v2/pokemon?limit=1008').then(data =>{
+    axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit.limit}`).then(data =>{
         pokemons.value = data.data.results
-        console.log(pokemons.value)
     })
 })
 

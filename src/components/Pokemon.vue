@@ -30,7 +30,6 @@ const type1 = ref("")
 const type2 = ref("")
 const sprite = ref("")
 const pkmName = prop.pokemon.name[0].toUpperCase()+prop.pokemon.name.slice(1)
-console.log(pkmName)
 
 onMounted(()=>{
     axios.get(url).then(data =>{
