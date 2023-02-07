@@ -1,10 +1,11 @@
 <template>
     <RouterLink :to="`/pokemons/${pokemon.name}`">
         <div class="flex items-center space-x-6 w-full p-2 border border-gray-200 cursor-pointer rounded-md">
-            <div :class="types.indexOf(pokemon.type1) == -1 ? 'default' : pokemon.type1" class="w-3 h-3 rounded-full"></div>
-            <div :class="types.indexOf(pokemon.type2) == -1 ? 'default' : pokemon.type2" class="w-3 h-3 rounded-full"></div>
+            <img :src="'public/types/'+pokemon.type1+'.png'" alt="?" class="w-14"/>
+            <img :src="'public/types/'+pokemon.type2+'.png'" alt="" class="w-14"/>
             <span>{{ pokemon.name }}</span>
         </div>
+        <TypeBar/>
     </RouterLink>
 </template>
 

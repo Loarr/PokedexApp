@@ -2,12 +2,12 @@
     <div class="flex flex-col space-y-6">
         <h1 class="text-6xl text-gray-900 font-semibold">{{ pokemonDetails?.name }}</h1>
         <img :src="image" :alt="pokemonDetails?.name" class="w-full h-full rounded-lg" />
-        <div>
+        <div class="space-y-4">
             <div class="flex items-center space-x-4">
-                <span>Primary Type:</span><span>{{ pokemonDetails?.type1 }}</span>
+                <span>Primary Type:</span><TypeBar :pkmType="pokemonDetails?.type1"/>
             </div>
             <div class="flex items-center space-x-4" v-if="pokemonDetails?.type2">
-                <span>Secondary Type:</span><span>{{ pokemonDetails?.type2 }}</span>
+                <span>Secondary Type:</span><TypeBar :pkmType="pokemonDetails?.type2"/>
             </div>
         </div>
         <div>
@@ -27,6 +27,7 @@ import {useRoute} from "vue-router";
 import pokemons from "@/assets/sampledataset.json";
 import { onMounted, ref } from "vue";
 import axios from "axios";
+import TypeBar from "@/components/TypeBar.vue"
 
 
 const route = useRoute()
