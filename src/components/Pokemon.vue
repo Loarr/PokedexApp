@@ -32,7 +32,11 @@ const sprite = ref("")
 const pkmName = prop.pokemon.name[0].toUpperCase()+prop.pokemon.name.slice(1)
 
 onMounted(()=>{
-    axios.get(url).then(data =>{
+    axios.get(url,{
+        headers: {
+           "Cache-control": true,
+        }
+    }).then(data =>{
         pokemonDetails.value= data.data
         type1.value = (pokemonDetails._rawValue.types[0].type.name)
         if(pokemonDetails._rawValue.types[1] !== undefined){

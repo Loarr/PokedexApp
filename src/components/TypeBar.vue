@@ -1,25 +1,22 @@
 <template>
     <div class="flex bg-[#9FA19F] text-white w-28 font-semibold">
-        <img :src="'/types/'+pkmType+'.png'" class="w-8"/><p class="text-center m-auto">{{ pkmType }}</p>
+        <img :src="'/types/'+props.pkmType+'.png'" class="w-8"/><p class="text-center m-auto">{{ type }}</p>
     </div>
 </template>
 
 <script setup>
+import { computed } from 'vue';
 
-defineProps({
+const props = defineProps({
     pkmType:{
         type: String
     }
 })
 
-function capitalizedFirst(string){
-    const capital = string[0].toUpperCase()
-    const rest = string.slice(1)
-    return captal + rest
-}
+const type = computed(()=>{
+    return props.pkmType[0]?.toUpperCase() + props.pkmType.slice(1)
+})
+
 
 </script>
 
-<style lang="scss" scoped>
-
-</style>

@@ -24,7 +24,7 @@
 <script setup>
 
 import {useRoute} from "vue-router";
-import pokemons from "@/assets/sampledataset.json";
+// import pokemons from "@/assets/sampledataset.json";
 import { onMounted, ref } from "vue";
 import axios from "axios";
 import TypeBar from "@/components/TypeBar.vue"
