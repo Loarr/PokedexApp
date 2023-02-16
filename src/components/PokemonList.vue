@@ -2,10 +2,10 @@
     <div class="flex space-x-4 overflow-scroll">
         <Pokemon :pokemon="pokemon" v-for="(pokemon, index) in pokemons" :key='index'/>
         <!-- use span tag for element visibility -->
-        <div ref="target">{{ targetIsVisible }}</div>
+        <!-- <div ref="target">{{ targetIsVisible }}</div> -->
     </div>
     <div class="float m-3 area shadow-lg">
-        <span v-text="targetIsVisible"></span>
+        <!-- <span v-text="targetIsVisible"></span> -->
   </div>
 </template>
 

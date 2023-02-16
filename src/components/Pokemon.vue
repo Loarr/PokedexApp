@@ -13,7 +13,6 @@
                 <img :src="sprite"/>
             </div>
         </div>
-
     </RouterLink>
 </template>
 

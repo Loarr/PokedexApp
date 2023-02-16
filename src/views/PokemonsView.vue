@@ -3,7 +3,7 @@
         <div class="h-full max-w-screem px-6 overflow-x-scroll">
         <!-- Pokemons list page -->
         <PokemonList v-model:limit="limit"/>
-        <span>{{ limit }}</span>
+        <!-- <span>{{ limit }}</span> -->
         </div>
         <div class="rounded-full bg-[url('/woodtexture.png')] w-100% h-10"></div>
         <div>
